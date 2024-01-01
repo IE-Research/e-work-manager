@@ -31,7 +31,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'EWORK Dashboard'),
+      home: const MyHomePage(title: 'EWORK Home'),
+
     );
   }
 }
@@ -49,6 +50,7 @@ class MyHomePage extends StatefulWidget {
   // always marked "final".
 
   final String title;
+  dashboard: const DashboardPage(title: 'EWORK Dashboard'),
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -122,4 +124,10 @@ class _MyHomePageState extends State<MyHomePage> {
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+}
+
+class DashboardPage extends StatefulWidget{
+  const DashboardPage({super.key, required this.title});
+
+
 }
