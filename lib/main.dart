@@ -50,8 +50,6 @@ class MyHomePage extends StatefulWidget {
   // always marked "final".
 
   final String title;
-  dashboard: const DashboardPage(title: 'EWORK Dashboard'),
-
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -126,8 +124,3 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class DashboardPage extends StatefulWidget{
-  const DashboardPage({super.key, required this.title});
-
-
-}
