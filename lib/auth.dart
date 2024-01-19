@@ -1,6 +1,9 @@
+
 import 'package:flutter/material.dart';
 
 class ContainerLogin extends StatelessWidget {
+  const ContainerLogin({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -17,14 +20,6 @@ class ContainerLogin extends StatelessWidget {
               ),
               borderRadius: BorderRadius.circular(12),
             ),
-            shadows: [
-              BoxShadow(
-                color: Color(0x3F000000),
-                blurRadius: 4,
-                offset: Offset(0, 4),
-                spreadRadius: 0,
-              )
-            ],
           ),
         ),
       ],
@@ -32,6 +27,3 @@ class ContainerLogin extends StatelessWidget {
   }
 }
 
-class ContainerSignin extends SatelessWidget {
-  @override
-}

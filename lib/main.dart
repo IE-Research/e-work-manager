@@ -31,8 +31,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'EWORK Home'),
-
+      home: const MyHomePage(title: 'EWORK Login'),
     );
   }
 }
@@ -50,6 +49,7 @@ class MyHomePage extends StatefulWidget {
   // always marked "final".
 
   final String title;
+
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -105,6 +105,37 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            const Row(
+              children: <Widget>[
+                Text('Username:'),
+                // Adding a simple text input bar (TextField) for the username
+                SizedBox(width: 10), // Add some spacing
+                Expanded(
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Enter your username',
+                    ),
+                  ),
+                ),
+              ],
+            ),
+
+            const Row(
+              children: <Widget>[
+                Text('Password:'),
+                // Adding a simple text input bar (TextField) for the username
+                SizedBox(width: 10), // Add some spacing
+                Expanded(
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Enter your Password',
+                    ),
+                  ),
+                ),
+              ],
+
+            ),
+
             const Text(
               'You have pushed the button this many times:',
             ),
