@@ -84,7 +84,8 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: const Text('Home'),
+        actions: const <Widget>[],
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -119,7 +120,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ],
             ),
-
             const Row(
               children: <Widget>[
                 Text('Password:'),
@@ -127,15 +127,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 SizedBox(width: 10), // Add some spacing
                 Expanded(
                   child: TextField(
+                    obscureText: true,
                     decoration: InputDecoration(
                       hintText: 'Enter your Password',
                     ),
                   ),
                 ),
               ],
-
             ),
-
             const Text(
               'You have pushed the button this many times:',
             ),
@@ -154,4 +153,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
