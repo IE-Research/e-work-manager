@@ -87,6 +87,9 @@ class _LoginFrameState extends State<LoginFrameInit> {
                   ),
                 ],
               ),
+              Row(
+
+              ),
             ],
           ),
         ),
@@ -130,9 +133,8 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Container(
               margin: const EdgeInsets.all(10.0),
-              color: Colors.amber[600],
-              width: 48.0,
-              height: 48.0,
+              width: 600.0,
+              height: 800.0,
               child: const LoginFrameInit(),
             ),
           ],
