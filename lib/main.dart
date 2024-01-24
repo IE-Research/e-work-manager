@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -122,6 +120,7 @@ class _LoginPanelState extends State<LoginPanelInit>{
         Container(
           margin: const EdgeInsets.only(left: 0, top: 0, bottom: 0),
           color: Colors.white10,
+          width: 300,
         ),
         Container(
             margin: const EdgeInsets.all(20.0),
@@ -156,11 +155,11 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text('Sign In'),
         actions: const <Widget>[],
       ),
-      body: Center(
+      body: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const LoginPanelInit(),
+            LoginPanelInit(),
           ],
         ),
       ),
