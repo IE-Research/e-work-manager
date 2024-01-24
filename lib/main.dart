@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -50,6 +52,8 @@ class LoginFrameInit extends StatefulWidget {
 }
 
 class _LoginFrameState extends State<LoginFrameInit> {
+
+
   @override
   Widget build(BuildContext context) {
     return const Padding(
@@ -88,7 +92,11 @@ class _LoginFrameState extends State<LoginFrameInit> {
                 ],
               ),
               Row(
+                children: [
+                  Column(
 
+                  ),
+                ],
               ),
             ],
           ),
@@ -98,16 +106,39 @@ class _LoginFrameState extends State<LoginFrameInit> {
   }
 }
 
+class LoginPanelInit extends StatefulWidget{
+  const LoginPanelInit({Key? key}) : super(key: key);
+
+  @override
+  State<LoginPanelInit> createState() => _LoginPanelState();
+}
+
+
+class _LoginPanelState extends State<LoginPanelInit>{
+  @override
+  Widget build(BuildContext context){
+    return Column(
+      children: <Widget>[
+        Container(
+          margin: const EdgeInsets.only(left: 0, top: 0, bottom: 0),
+          color: Colors.white10,
+        ),
+        Container(
+            margin: const EdgeInsets.all(20.0),
+            width: 600.0,
+            height: 800.0,
+            child: const LoginFrameInit(),
+        ),
+      ],
+    );
+  }
+}
+
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
       _counter++;
     });
   }
@@ -126,17 +157,10 @@ class _MyHomePageState extends State<MyHomePage> {
         actions: const <Widget>[],
       ),
       body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Container(
-              margin: const EdgeInsets.all(10.0),
-              width: 600.0,
-              height: 800.0,
-              child: const LoginFrameInit(),
-            ),
+          children: [
+            const LoginPanelInit(),
           ],
         ),
       ),
