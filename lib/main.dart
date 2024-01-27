@@ -53,7 +53,7 @@ class _LoginFrameState extends State<LoginFrameInit> {
 
   final TextEditingController _username = TextEditingController();
   final TextEditingController _password = TextEditingController();
-
+  
   void _eventForgotPassword(){
     setState(() {
       
@@ -65,7 +65,6 @@ class _LoginFrameState extends State<LoginFrameInit> {
       
     });
   }
-
   @override
   Widget build(BuildContext context) {
     return const Padding(
