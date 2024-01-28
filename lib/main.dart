@@ -51,8 +51,16 @@ class LoginFrameInit extends StatefulWidget {
 
 class _LoginFrameState extends State<LoginFrameInit> {
 
-  final TextEditingController _username = TextEditingController();
-  final TextEditingController _password = TextEditingController();
+  final _usernameController = TextEditingController();
+  final _password = TextEditingController();
+
+  @override
+  void dispose() {
+    // Dispose the controller when the widget is disposed
+    _usernameController.dispose();
+    _password.dispose();
+    super.dispose();
+  }
   
   void _eventForgotPassword(){
     setState(() {
@@ -67,7 +75,7 @@ class _LoginFrameState extends State<LoginFrameInit> {
   }
   @override
   Widget build(BuildContext context) {
-    return const Padding(
+    return Padding(
       padding: EdgeInsets.all(32),
       child: Column(children: [
         Expanded(
@@ -80,7 +88,7 @@ class _LoginFrameState extends State<LoginFrameInit> {
                   SizedBox(width: 10), // Add some spacing
                   Expanded(
                     child: TextField(
-                      controller: _username,
+                      controller: _usernameController,
                       decoration: InputDecoration(
                         hintText: 'Enter your username',
                       ),
@@ -125,14 +133,6 @@ class _LoginFrameState extends State<LoginFrameInit> {
         ),
       ]),
     );
-  }
-
-  @override
-  void dispose() {
-    // Dispose the controller when the widget is disposed
-    _username.dispose();
-    _password.dispose();
-    super.dispose();
   }
 }
 
