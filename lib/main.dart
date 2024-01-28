@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'screens/auth.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,6 @@ class MyApp extends StatelessWidget {
       title: 'EWORK Manager',
       theme: ThemeData(
         // This is the theme of your application.
-        //
 
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
@@ -42,137 +42,7 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class LoginFrameInit extends StatefulWidget {
-  const LoginFrameInit({Key? key}) : super(key: key);
-
-  @override
-  State<LoginFrameInit> createState() => _LoginFrameState();
-}
-
-class _LoginFrameState extends State<LoginFrameInit> {
-
-  final _usernameController = TextEditingController();
-  final _password = TextEditingController();
-
-  @override
-  void dispose() {
-    // Dispose the controller when the widget is disposed
-    _usernameController.dispose();
-    _password.dispose();
-    super.dispose();
-  }
-  
-  void _eventForgotPassword(){
-    setState(() {
-      
-    });
-  }
-
-  void _eventSignUp() {
-    setState(() {
-      
-    });
-  }
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(32),
-      child: Column(children: [
-        Expanded(
-          child: Column(
-            children: [
-              Row(
-                children: <Widget>[
-                  Text('Username:'),
-                  // Adding a simple text input bar (TextField) for the username
-                  SizedBox(width: 10), // Add some spacing
-                  Expanded(
-                    child: TextField(
-                      controller: _usernameController,
-                      decoration: InputDecoration(
-                        hintText: 'Enter your username',
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: <Widget>[
-                  Text('Password:'),
-                  // Adding a simple text input bar (TextField) for the username
-                  SizedBox(width: 10), // Add some spacing
-                  Expanded(
-                    child: TextField(
-                      controller: _password,
-                      obscureText: true,
-                      decoration: InputDecoration(
-                        hintText: 'Enter your Password',
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Column(
-                    children: [
-                        FloatingActionButton(
-                          onPressed: _eventForgotPassword,
-                          tooltip: 'Forgot ?',
-                        ),
-
-                        FloatingActionButton(
-                          onPressed: _eventSignUp,
-                        ),
-                    ],
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ]),
-    );
-  }
-}
-
-class LoginPanelInit extends StatefulWidget{
-  const LoginPanelInit({Key? key}) : super(key: key);
-
-  @override
-  State<LoginPanelInit> createState() => _LoginPanelState();
-}
-
-
-class _LoginPanelState extends State<LoginPanelInit>{
-  @override
-  Widget build(BuildContext context){
-    return Column(
-      children: <Widget>[
-        Container(
-          margin: const EdgeInsets.only(left: 0, top: 0, bottom: 0),
-          color: Colors.white10,
-          width: 300,
-        ),
-        Container(
-            margin: const EdgeInsets.all(20.0),
-            width: 600.0,
-            height: 800.0,
-            child: const LoginFrameInit(),
-        ),
-      ],
-    );
-  }
-}
-
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -190,11 +60,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
