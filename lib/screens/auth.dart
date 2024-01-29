@@ -1,7 +1,10 @@
 
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 
+// Login 
 class LoginFrameInit extends StatefulWidget {
   const LoginFrameInit({Key? key}) : super(key: key);
 
@@ -70,7 +73,7 @@ class _LoginFrameState extends State<LoginFrameInit> {
               ),
               Row(
                 children: [
-                  Column(
+                  Row(
                     children: [
                       FloatingActionButton(
                         onPressed: _eventForgotPassword,
@@ -78,6 +81,7 @@ class _LoginFrameState extends State<LoginFrameInit> {
                       ),
                       FloatingActionButton(
                         onPressed: _eventSignUp,
+                        tooltip: 'Sign In ->',
                       ),
                     ],
                   ),
@@ -119,3 +123,41 @@ class _LoginPanelState extends State<LoginPanelInit> {
   }
 }
 
+// Sign in 
+class SignInFrame extends StatefulWidget{
+  const SignInFrame({Key? key}): super(key: key);
+
+  @override
+  State<SignInFrame> createState() => _SignInState();
+}
+
+class _SignInState extends State<SignInFrame> {
+  String labelname;
+  final _username = TextEditingController();
+  final _password = TextEditingController();
+
+  @override
+  void dispose() {
+    // Dispose the controller when the widget is disposed
+    _username.dispose();
+    _password.dispose();
+    super.dispose();
+  }
+
+  void _eventButtonClickSignIn() {
+    setState(() {});
+  }
+
+  @override
+  Widget build(BuildContext buildContext){
+    return Container(
+      child: <Widget>[
+        Text(labelname.value),
+        Container(
+          
+        )
+      ],
+    );
+  }
+  
+}
