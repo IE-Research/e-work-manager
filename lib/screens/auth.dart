@@ -1,6 +1,5 @@
 
 import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 
 
@@ -151,13 +150,6 @@ class _SignInState extends State<SignInFrame> {
   @override
   Widget build(BuildContext buildContext){
     return Container(
-      child: <Widget>[
-        Text(labelname.value),
-        Container(
-          
-        )
-      ],
     );
   }
-  
 }
